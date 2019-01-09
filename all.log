@@ -1,0 +1,114 @@
+
+Microsoft (R) Windows Debugger Version 10.0.18311.1001 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+************************************************************************************************************************
+Recent Debugger Updates
+------------------------------------------------------------------------------------------------------------------------
+
+Major Changes:
+
+    - The debugger now has new capabilities for scripting!  JavaScript can now be used as a mechanism to both script the
+      debugger itself as well as to author debugger extensions!
+        [Tell me more                  : .dml_file release_feature.dml]
+
+      To enable JavaScript in the debugger, the JavaScript provider extension must be loaded (and can subsequently be unloaded):
+
+        [Load the JavaScript Provider  : !load JsProvider.dll]
+        [Unload the JavaScript Provider: !unload JsProvider.dll]
+
+      Once one or more script provider extensions have been loaded, a series of dot commands are available to view available providers,
+      see loaded scripts, and execute them:
+
+        [View all available providers  : .scriptproviders]
+        [View all loaded scripts       : .scriptlist]
+        [Load an extension script      : .scriptload <path to script>]
+        [Run an imperative script      : .scriptrun <path to script>]
+        [Unload a script               : .scriptunload <path to script>]
+
+    - [Turn banner off until changed : .settings set EngineInitialization.MinBannerVersionToDisplay = 5; .settings save]
+
+------------------------------------------------------------------------------------------------------------------------
+Past/Release Candidate Banners
+************************************************************************************************************************
+
+
+Loading Dump File [C:\Users\myusername\code\DebugAspNetCore\RD0003FF588DD0_w3wp_7900.dmp]
+User Mini Dump File with Full Memory: Only application data is available
+
+Comment: '
+*** "D:\Program Files (x86)\SiteExtensions\DaaS\1.32.181204.01\bin\DiagnosticTools\procdump.exe"  -accepteula -ma 7900 D:\local\Temp\Logs\aitest3\19-01-03\RD0003FF588DD0\MemoryDumpCollector\190103_0830436989\190103_0832436989\RD0003FF588DD0_w3wp_7900.dmp
+*** Manual dump'
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 14393 UP Free x64
+Product: Server, suite: TerminalServer DataCenter SingleUserTS
+10.0.14393.2430 (rs1_release_inmarket_aim.180806-1810)
+Machine Name:
+Debug session time: Thu Jan  3 16:30:51.000 2019 (UTC + 8:00)
+System Uptime: 6 days 1:03:47.155
+Process Uptime: 0 days 0:08:20.000
+................................................................
+................................................................
+................................................................
+................................................................
+..............................
+For analysis of this file, run !analyze -v
+ntdll!ZwWaitForSingleObject+0x14:
+00007ffc`cf2e5b84 c3              ret
+0:000> .chain
+Extension DLL search Path:
+    C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\WINXP;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext\arcade;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\pri;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64;C:\Users\myusername\AppData\Local\Dbg\EngineExtensions;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Users\myusername\AppData\Local\Microsoft\WindowsApps;;C:\Users\myusername\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\myusername\.dotnet\tools;C:\Users\myusername\AppData\Local\Programs\Fiddler
+Extension DLL chain:
+    MexOMStub: API 0.0.0, built Tue Mar  6 00:57:22 2018
+        [path: C:\Users\myusername\AppData\Local\DBG\ExtRepository\EG\cache2\Packages\MexOMStub\3.0.0.9365\x64\MexOMStub.dll]
+    DbgEngCoreDMExt: image 10.0.18256.1000, API 0.0.0, 
+        [path: C:\Users\myusername\AppData\Local\DBG\ExtRepository\EG\cache2\Packages\DbgEngCoreDMExt\10.0.18256.1000\amd64\DbgEngCoreDMExt.dll]
+    C:\ProgramData\Dbg\sym\SOS_AMD64_AMD64_4.7.3190.00.dll\5B693B489ed000\SOS_AMD64_AMD64_4.7.3190.00.dll: image 4.7.3190.0, API 1.0.0, built Tue Aug  7 14:16:55 2018
+        [path: C:\ProgramData\Dbg\sym\SOS_AMD64_AMD64_4.7.3190.00.dll\5B693B489ed000\SOS_AMD64_AMD64_4.7.3190.00.dll]
+    ELFBinComposition: image 10.0.18311.1001, API 0.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext\ELFBinComposition.dll]
+    dbghelp: image 10.0.18311.1001, API 10.0.6, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\dbghelp.dll]
+    ext: image 10.0.18248.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\DBG\ExtRepository\EG\cache2\Packages\ext\10.0.18248.1001\amd64fre\winext\ext.dll]
+    exts: image 10.0.18311.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\WINXP\exts.dll]
+    uext: image 10.0.18311.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext\uext.dll]
+    ntsdexts: image 10.0.18311.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\WINXP\ntsdexts.dll]
+0:000> .unload MexOMStub
+Unloading MexOMStub extension DLL
+0:000> .unload DbgEngCoreDMExt
+Unloading DbgEngCoreDMExt extension DLL
+0:000> .unload C:\ProgramData\Dbg\sym\SOS_AMD64_AMD64_4.7.3190.00.dll\5B693B489ed000\SOS_AMD64_AMD64_4.7.3190.00.dll
+Unloading C:\ProgramData\Dbg\sym\SOS_AMD64_AMD64_4.7.3190.00.dll\5B693B489ed000\SOS_AMD64_AMD64_4.7.3190.00.dll extension DLL
+0:000> .chain
+Extension DLL search Path:
+    C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\WINXP;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext\arcade;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\pri;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64;C:\Users\myusername\AppData\Local\Dbg\EngineExtensions;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64;C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Users\myusername\AppData\Local\Microsoft\WindowsApps;;C:\Users\myusername\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\myusername\.dotnet\tools;C:\Users\myusername\AppData\Local\Programs\Fiddler
+Extension DLL chain:
+    ELFBinComposition: image 10.0.18311.1001, API 0.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext\ELFBinComposition.dll]
+    dbghelp: image 10.0.18311.1001, API 10.0.6, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\dbghelp.dll]
+    ext: image 10.0.18248.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\DBG\ExtRepository\EG\cache2\Packages\ext\10.0.18248.1001\amd64fre\winext\ext.dll]
+    exts: image 10.0.18311.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\WINXP\exts.dll]
+    uext: image 10.0.18311.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\winext\uext.dll]
+    ntsdexts: image 10.0.18311.1001, API 1.0.0, 
+        [path: C:\Users\myusername\AppData\Local\dbg\UI\Fast.20190108.4\amd64\WINXP\ntsdexts.dll]
+0:000> .cordll -u -l -lp "C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.2.0"
+CLR DLL status: Loaded DLL C:\ProgramData\Dbg\sym\mscordacwks_AMD64_AMD64_4.7.3190.00.dll\5B693B489ed000\mscordacwks_AMD64_AMD64_4.7.3190.00.dll
+0:000> .load C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.2.0\sos.dll
+0:000> !Threads
+Failed to request ThreadStore
+0:000> .cordll
+CLR DLL status: Loaded DLL C:\ProgramData\Dbg\sym\mscordacwks_AMD64_AMD64_4.7.3190.00.dll\5B693B489ed000\mscordacwks_AMD64_AMD64_4.7.3190.00.dll

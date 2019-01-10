@@ -1,0 +1,256 @@
+Microsoft (R) Windows Debugger Version 10.0.18311.1001 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+************************************************************************************************************************
+Recent Debugger Updates
+------------------------------------------------------------------------------------------------------------------------
+
+Major Changes:
+
+    - The debugger now has new capabilities for scripting!  JavaScript can now be used as a mechanism to both script the
+      debugger itself as well as to author debugger extensions!
+        [Tell me more                  : .dml_file release_feature.dml]
+
+      To enable JavaScript in the debugger, the JavaScript provider extension must be loaded (and can subsequently be unloaded):
+
+        [Load the JavaScript Provider  : !load JsProvider.dll]
+        [Unload the JavaScript Provider: !unload JsProvider.dll]
+
+      Once one or more script provider extensions have been loaded, a series of dot commands are available to view available providers,
+      see loaded scripts, and execute them:
+
+        [View all available providers  : .scriptproviders]
+        [View all loaded scripts       : .scriptlist]
+        [Load an extension script      : .scriptload <path to script>]
+        [Run an imperative script      : .scriptrun <path to script>]
+        [Unload a script               : .scriptunload <path to script>]
+
+    - [Turn banner off until changed : .settings set EngineInitialization.MinBannerVersionToDisplay = 5; .settings save]
+
+------------------------------------------------------------------------------------------------------------------------
+Past/Release Candidate Banners
+************************************************************************************************************************
+
+
+Loading Dump File [C:\Users\myusername\code\DebugAspNetCore\RD0003FF588DD0_w3wp_7900.dmp]
+User Mini Dump File with Full Memory: Only application data is available
+
+Comment: '
+*** "D:\Program Files (x86)\SiteExtensions\DaaS\1.32.181204.01\bin\DiagnosticTools\procdump.exe"  -accepteula -ma 7900 D:\local\Temp\Logs\aitest3\19-01-03\RD0003FF588DD0\MemoryDumpCollector\190103_0830436989\190103_0832436989\RD0003FF588DD0_w3wp_7900.dmp
+*** Manual dump'
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 14393 UP Free x64
+Product: Server, suite: TerminalServer DataCenter SingleUserTS
+10.0.14393.2430 (rs1_release_inmarket_aim.180806-1810)
+Machine Name:
+Debug session time: Thu Jan  3 16:30:51.000 2019 (UTC + 8:00)
+System Uptime: 6 days 1:03:47.155
+Process Uptime: 0 days 0:08:20.000
+................................................................
+................................................................
+................................................................
+................................................................
+..............................
+For analysis of this file, run !analyze -v
+ntdll!ZwWaitForSingleObject+0x14:
+00007ffc`cf2e5b84 c3              ret
+0:000> .cordll -u -I coreclr -l -lp "C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.2.0\"
+CLR DLL status: Loaded DLL C:\ProgramData\Dbg\sym\mscordaccore_AMD64_AMD64_4.6.27110.04.dll\5BE756335c6000\mscordaccore_AMD64_AMD64_4.6.27110.04.dll
+0:000> !Threads
+ThreadCount:      24
+UnstartedThread:  0
+BackgroundThread: 8
+PendingThread:    0
+DeadThread:       15
+Hosted Runtime:   no
+                                                                                                        Lock  
+       ID OSID ThreadOBJ           State GC Mode     GC Alloc Context                  Domain           Count Apt Exception
+  20    1 1d34 0000016abba81920  202a020 Preemptive  0000016ABC591C28:0000016ABC591FD0 0000016abb8f8730 0     MTA 
+  23    2 1f54 0000016abbabb080    2b220 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     MTA (Finalizer) 
+  24    3  4d0 0000016abb8b3b00  102a220 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     MTA (Threadpool Worker) 
+XXXX    4    0 0000016abaf465c0  8039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Completion Port) 
+XXXX    5    0 0000016abbb2b5c0  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+  25    6 1dec 0000016abbb2e780  202b220 Preemptive  0000016ABC3EA370:0000016ABC3EBFD0 0000016abb8f8730 0     MTA 
+XXXX    7    0 0000016abbb72140  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+   1    8 1540 0000016abbb8f210    20220 Preemptive  0000016ABC594398:0000016ABC595FD0 0000016abb8f8730 0     Ukn 
+   6    9 132c 0000016abbc045f0    20220 Preemptive  0000016ABC786268:0000016ABC787FD0 0000016abb8f8730 0     Ukn 
+XXXX   10    0 0000016abbc2ee90  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+  27   11 1ba4 0000016abbc2fce0  8029220 Preemptive  0000016ABC714168:0000016ABC715FD0 0000016abb8f8730 0     MTA (Threadpool Completion Port) 
+XXXX   12    0 0000016abbc2f520  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   13    0 0000016abbb2dee0  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   14    0 0000016abbb999c0  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   15    0 0000016abbafafd0  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   16    0 0000016abbafb660  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   17    0 0000016abbadce80  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   18    0 0000016abbb9da30  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   19    0 0000016abbb9e0c0  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   20    0 0000016abbb9e750  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   21    0 0000016abbb9ede0  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+XXXX   22    0 0000016abbd0da50  1039820 Preemptive  0000000000000000:0000000000000000 0000016abb8f8730 0     Ukn (Threadpool Worker) 
+  28   23  2b4 0000016abbd0c010  1029220 Preemptive  0000016ABC7B6030:0000016ABC7B7FD0 0000016abb8f8730 0     MTA (Threadpool Worker) 
+  29   24 1dac 0000016abbd098b0  1029220 Preemptive  0000016ABC7B8030:0000016ABC7B9FD0 0000016abb8f8730 0     MTA (Threadpool Worker) 
+0:000> ~*e !CLRStack
+OS Thread Id: 0x440 (0)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1540 (1)
+        Child SP               IP Call Site
+GetFrameContext failed: 1
+0000000000000000 0000000000000000 
+OS Thread Id: 0x1f50 (2)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1530 (3)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x195c (4)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x5a4 (5)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x132c (6)
+        Child SP               IP Call Site
+GetFrameContext failed: 1
+0000000000000000 0000000000000000 
+OS Thread Id: 0x1e14 (7)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1c54 (8)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x900 (9)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1b3c (10)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x9bc (11)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1c64 (12)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1b44 (13)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1870 (14)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x648 (15)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1b90 (16)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x15b8 (17)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1ff0 (18)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1d60 (19)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1d34 (20)
+        Child SP               IP Call Site
+00000043882fd660 00007ffccf2e6654 [GCFrame: 00000043882fd660] 
+00000043882fd7a8 00007ffccf2e6654 [HelperMethodFrame_1OBJ: 00000043882fd7a8] System.Threading.Monitor.ObjWait(Boolean, Int32, System.Object)
+00000043882fd8d0 00007ffcac438310 System.Threading.ManualResetEventSlim.Wait(Int32, System.Threading.CancellationToken)
+00000043882fd970 00007ffcac405107 Error: Failed to load D:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.2.0\coreclr.dll
+System.Threading.Tasks.Task.SpinThenBlockingWait(Int32, System.Threading.CancellationToken)
+00000043882fd9e0 00007ffcac404fa8 System.Threading.Tasks.Task.InternalWaitCore(Int32, System.Threading.CancellationToken)
+00000043882fda60 00007ffcac44a713 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(System.Threading.Tasks.Task)
+00000043882fda90 00007ffcb8646c75 Microsoft.AspNetCore.Hosting.WebHostExtensions.Run(Microsoft.AspNetCore.Hosting.IWebHost)
+00000043882fdac0 00007ffc4cff1528 AspNetCoreMvc22.Program.Main(System.String[])
+00000043882fdcf0 00007ffcacaea673 [GCFrame: 00000043882fdcf0] 
+00000043882fe238 00007ffcacaea673 [GCFrame: 00000043882fe238] 
+OS Thread Id: 0x1160 (21)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1ad8 (22)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1f54 (23)
+        Child SP               IP Call Site
+000000438847fb30 00007ffccf2e6654 [DebuggerU2MCatchHandlerFrame: 000000438847fb30] 
+OS Thread Id: 0x4d0 (24)
+        Child SP               IP Call Site
+GetFrameContext failed: 1
+0000000000000000 0000000000000000 
+OS Thread Id: 0x1dec (25)
+        Child SP               IP Call Site
+000000438877ec30 00007ffccf2e6654 [GCFrame: 000000438877ec30] 
+000000438877ed78 00007ffccf2e6654 [HelperMethodFrame_1OBJ: 000000438877ed78] System.Threading.Monitor.ObjWait(Boolean, Int32, System.Object)
+000000438877eea0 00007ffcac449b0d System.Threading.SemaphoreSlim.WaitUntilCountOrTimeout(Int32, UInt32, System.Threading.CancellationToken)
+000000438877eef0 00007ffcac44989d System.Threading.SemaphoreSlim.Wait(Int32, System.Threading.CancellationToken)
+000000438877ef90 00007ffc4d0225bd System.Collections.Concurrent.BlockingCollection`1[[Microsoft.Extensions.Logging.Console.Internal.LogMessageEntry, Microsoft.Extensions.Logging.Console]].TryTakeWithNoTimeValidation(Microsoft.Extensions.Logging.Console.Internal.LogMessageEntry ByRef, Int32, System.Threading.CancellationToken, System.Threading.CancellationTokenSource)
+000000438877eff0 00007ffc4d020d77 System.Collections.Concurrent.BlockingCollection`1+d__68[[Microsoft.Extensions.Logging.Console.Internal.LogMessageEntry, Microsoft.Extensions.Logging.Console]].MoveNext()
+000000438877f070 00007ffcb0f3ae7e Microsoft.Extensions.Logging.Console.Internal.ConsoleLoggerProcessor.ProcessLogQueue()
+000000438877f110 00007ffcaaee7060 System.Threading.Thread.ThreadMain_ThreadStart()
+000000438877f140 00007ffcac351999 System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)
+000000438877f3a8 00007ffcacaea673 [GCFrame: 000000438877f3a8] 
+000000438877f620 00007ffcacaea673 [DebuggerU2MCatchHandlerFrame: 000000438877f620] 
+OS Thread Id: 0x12b8 (26)
+Unable to walk the managed stack. The current thread is likely not a 
+managed thread. You can run !threads to get a list of managed threads in
+the process
+Failed to start stack walk: 80070057
+OS Thread Id: 0x1ba4 (27)
+        Child SP               IP Call Site
+GetFrameContext failed: 1
+0000000000000000 0000000000000000 
+OS Thread Id: 0x2b4 (28)
+        Child SP               IP Call Site
+GetFrameContext failed: 1
+0000000000000000 0000000000000000 
+OS Thread Id: 0x1dac (29)
+        Child SP               IP Call Site
+GetFrameContext failed: 1
+0000000000000000 0000000000000000 
